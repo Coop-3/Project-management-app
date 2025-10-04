@@ -2,7 +2,7 @@
 
 ## What I Learned
 - I learned how to set up my GitHub using Git commands from my code compiler, VSCode 
-- Setup folders
+- Set up folders
 - Set basic HTML, JavaScript, and Markdown setup 
 - Understanding what folder is what and where things need to be 
 - Git commands that upload everything to GitHub  
@@ -23,87 +23,6 @@ let msg = document.getElementById("message");
 console.log(msg.innerText); // "Hello!"
 ```
 
-Other selectors:
-
-```javascript
-document.querySelector("p");        // first <p>
-document.querySelectorAll("p");     // all <p>
-```
-
----
-
-### 2. Changing Content & Styles
-
-```javascript
-msg.innerText = "Goodbye!"; // change text
-msg.style.color = "blue";   // change color
-```
-
----
-
-### 3. Adding & Removing Elements
-
-```javascript
-let newItem = document.createElement("li");
-newItem.innerText = "Learn DOM";
-document.body.appendChild(newItem);  // adds it to page
-```
-
----
-
-### 4. Click Event
-
-```html
-<button id="btn">Click Me</button>
-<p id="output"></p>
-```
-
-```javascript
-let btn = document.getElementById("btn");
-let out = document.getElementById("output");
-
-btn.addEventListener("click", function() {
-  out.innerText = "Button was clicked!";
-});
-```
-
----
-
-### 5. Input Event
-
-```html
-<input id="nameInput" placeholder="Type your name" />
-<p id="greeting"></p>
-```
-
-```javascript
-let input = document.getElementById("nameInput");
-let greet = document.getElementById("greeting");
-
-input.addEventListener("input", function() {
-  greet.innerText = "Hello, " + input.value;
-});
-```
-
----
-
-### 6. Removing Items with a Button
-
-```html
-<ul id="list">
-  <li>Item 1 <button class="remove">x</button></li>
-</ul>
-```
-
-```javascript
-let buttons = document.querySelectorAll(".remove");
-buttons.forEach(btn => {
-  btn.addEventListener("click", function() {
-    btn.parentElement.remove(); // remove that <li>
-  });
-});
-```
-
 
 
 
@@ -112,3 +31,7 @@ buttons.forEach(btn => {
 
 ## Takeaways
 - [What you got out of it]
+
+
+
+
