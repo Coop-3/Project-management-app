@@ -1,0 +1,66 @@
+📘 Overview
+
+This stage covers developing the user authentication system, including:
+
+Login
+
+Signup
+
+Forgot Password
+
+Username Reset
+
+Google and GitHub OAuth integrations
+
+These features help users securely access their Connect+ accounts and data.
+
+🔍 Purpose
+
+Authentication ensures user security and controlled access.
+Users can:
+
+Create an account
+
+Log in securely
+
+Reset their credentials when needed
+
+Use OAuth for quicker login
+
+⚙️ What Was Implemented
+Feature	Description
+Login Page	Allows users to access their account via email and password.
+Signup Page	New users register using their details.
+Forgot Password	Sends reset link to the user’s email.
+Username Reset	Helps users recover their username.
+OAuth (Google/GitHub)	Users can log in quickly using existing accounts.
+
+All authentication routes were connected to MongoDB using Mongoose models and tested through Thunder Client.
+
+🧠 Challenges Faced
+Issue	Description	Resolution
+MongoDB Atlas not connecting	We faced an ENOTFOUND and bad auth error when connecting.	Corrected .env MONGO_URI format and confirmed user credentials on MongoDB Atlas.
+Thunder Client Invalid URL	“Invalid URL” message appeared when testing POST routes.	Fixed by verifying the local server URL: http://localhost:5000/api/auth/register.
+Login/Signup styling	The initial page didn’t match the design.	Adjusted CSS and layout using Bootstrap and custom styles.
+Vite dependency errors	Bootstrap import path was incorrect.	Corrected path and reinstalled missing dependencies.
+🧩 Lessons Learned
+
+Environment variables must be placed in the server folder, not client.
+
+MongoDB connection strings must exactly match Atlas credentials.
+
+Thunder Client is great for API testing but sensitive to typos in routes.
+
+Maintaining a clear folder structure prevents import confusion.
+
+🧰 Tools Used
+
+React for building the UI.
+
+Bootstrap for responsive form styling.
+
+Express.js + Mongoose for backend and database.
+
+Thunder Client for API testing.
+
+MongoDB Atlas for cloud data storage.
