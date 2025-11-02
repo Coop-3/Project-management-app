@@ -1,0 +1,73 @@
+🧩 Tech Stack
+Layer	Technology	Purpose
+Frontend	React + Vite	Builds the user interface and handles user interactions
+Styling	CSS + Bootstrap	Creates responsive and modern UI designs
+Backend	Node.js + Express	Handles server logic, API routes, and authentication
+Database	MongoDB Atlas (Cloud)	Stores user data (login, signup, projects, etc.)
+Testing	Thunder Client (VS Code)	Tests API endpoints and backend routes
+
+
+Three-Tier Architecture
+
+Presentation Layer (Frontend):
+The client folder holds the React app, including all UI components, pages, and styles.
+
+Displays forms, dashboards, and visual elements.
+
+Sends user actions (login, signup, etc.) to the backend via API calls.
+
+Application Layer (Backend):
+The server folder manages business logic and routes.
+
+Receives API requests from the frontend.
+
+Communicates with MongoDB for data storage/retrieval.
+
+Uses Express for routing and middleware.
+
+Data Layer (Database):
+MongoDB Atlas stores user records and app data securely.
+
+Connection managed in server.js via Mongoose.
+
+.env file securely holds connection credentials.
+
+
+Folder and Files Organization 
+Project-management-app/
+│
+├── client/              # Frontend (React + Vite)
+│   ├── public/
+│   │   └── vite.svg
+│   ├── src/
+│   │   ├── assets/      # Logos, images
+│   │   ├── pages/       # Login.jsx, Signup.jsx, ForgotPassword.jsx, etc.
+│   │   ├── styles/      # auth.css, App.css
+│   │   └── App.jsx      # Main app component
+│   ├── package.json     # React dependencies
+│   └── vite.config.js
+│
+├── server/              # Backend (Node + Express)
+│   ├── controllers/     # Business logic (UserController.js)
+│   ├── models/          # Mongoose models (User.js)
+│   ├── routes/          # API routes (authRoutes.js)
+│   ├── server.js        # Main entry point, connects to MongoDB
+│   ├── .env             # Environment variables (Mongo URI, JWT secret)
+│   └── package.json     # Backend dependencies
+│
+└── README.md
+
+Key Files Explained
+
+server.js: Starts the Express server and connects MongoDB.
+
+authRoutes.js: Defines routes for user login/signup.
+
+User.js: Mongoose schema for storing user information.
+
+Login.jsx / Signup.jsx: Frontend components for user authentication.
+
+auth.css: Handles styling for login/signup pages.
+
+.env: Keeps sensitive data private (MongoDB URI, JWT secret).
+
