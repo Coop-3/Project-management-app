@@ -1,0 +1,214 @@
+# Week 1-2 Reflection
+
+## What I Learned
+- I learned how to set up my GitHub using Git commands from my code compiler, VSCode 
+- Set up folders
+- Set basic HTML, JavaScript, and Markdown setup 
+- Understanding what folder is what and where things need to be 
+- Git commands that upload everything to GitHub  
+
+# JavaScript & DOM Practice
+
+This file documents my progress learning **JavaScript basics** and the **DOM** while preparing for the Campus Connect Plus project. Each section includes code examples and expected outputs.
+
+---
+
+# Day 1 – JavaScript Basics
+
+### Variables
+
+```js
+let name = "Makayla";
+const age = 22;
+
+console.log(name, age); // Makayla 22
+```
+
+### Functions
+
+```js
+function greet(person) {
+  return "Hello, " + person + "!";
+}
+
+console.log(greet("Makayla")); // Hello, Makayla!
+```
+
+### Arrays
+
+```js
+let fruits = ["apple", "banana", "orange"];
+
+console.log(fruits[0]); // apple
+console.log(fruits.length); // 3
+```
+
+### Practice Solution – Multiply & Sum
+
+```js
+let numbers = [6, 7, 8, 9, 10];
+
+function productArray(arr) {
+  let total = 0;
+  for (let num of arr) {
+    total += num * 3;
+  }
+  return total;
+}
+
+console.log(productArray(numbers)); 
+// Output: 120
+```
+
+---
+
+# Day 2 – Objects & Array Methods
+
+### Objects
+
+```js
+let task = {
+  title: "Finish homework",
+  completed: false
+};
+
+console.log(task.title); // Finish homework
+```
+
+### Array Methods (map, filter, forEach)
+
+```js
+let tasks = [
+  { title: "Study JS", completed: true },
+  { title: "Learn React", completed: false },
+  { title: "Walk dog", completed: true }
+];
+
+let titles = tasks.map(task => task.title);
+console.log(titles); 
+// ["Study JS", "Learn React", "Walk dog"]
+
+let done = tasks.filter(task => task.completed);
+console.log(done); 
+// [{title: "Study JS", completed: true}, {title: "Walk dog", completed: true}]
+
+tasks.forEach(task => console.log(task.title));
+```
+
+### Practice Solution – filter() & map()
+
+```js
+let tasksList = [
+  {title: "Do hair", completed: false},
+  {title: "Finish Pol quiz", completed: false},
+  {title: "Study for Math", completed: true},
+  {title: "Study JS", completed: true}
+];
+
+let notDone = tasksList.filter(task => !task.completed);
+console.log(notDone);
+// [ { title: 'Do hair', completed: false }, { title: 'Finish Pol quiz', completed: false } ]
+
+let numbers = [2, 4, 6, 8, 10];
+let squared = numbers.map(n => n ** 2);
+console.log(squared);
+// [ 4, 16, 36, 64, 100 ]
+```
+
+---
+
+# Day 3 – DOM Basics
+
+### Selecting Elements
+
+```html
+<p id="message">Hello!</p>
+```
+
+```js
+let msg = document.getElementById("message"); 
+console.log(msg.innerText); // "Hello!"
+```
+
+### Changing Content & Styles
+
+```js
+msg.innerText = "Goodbye!";
+msg.style.color = "blue";
+```
+
+### Adding Elements
+
+```js
+let newItem = document.createElement("li");
+newItem.innerText = "Learn DOM";
+document.body.appendChild(newItem);
+```
+
+---
+
+# Day 4 – DOM Events
+
+### Click Event
+
+```html
+<button id="btn">Click Me</button>
+<p id="output"></p>
+```
+
+```js
+let btn = document.getElementById("btn");
+let out = document.getElementById("output");
+
+btn.addEventListener("click", function() {
+  out.innerText = "Button was clicked!";
+});
+```
+
+### Input Event
+
+```html
+<input id="nameInput" placeholder="Type your name" />
+<p id="greeting"></p>
+```
+
+```js
+let input = document.getElementById("nameInput");
+let greet = document.getElementById("greeting");
+
+input.addEventListener("input", function() {
+  greet.innerText = "Hello, " + input.value;
+});
+```
+
+### Remove Element Example
+
+```html
+<ul id="list">
+  <li>Item 1 <button class="remove">x</button></li>
+</ul>
+```
+
+```js
+let buttons = document.querySelectorAll(".remove");
+buttons.forEach(btn => {
+  btn.addEventListener("click", function() {
+    btn.parentElement.remove();
+  });
+});
+```
+
+---
+
+
+
+
+## Challenges
+- [Things you found difficult]
+
+## Takeaways
+- [What you got out of it]
+
+
+
+
