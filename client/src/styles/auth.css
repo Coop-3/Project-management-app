@@ -1,0 +1,349 @@
+/* === Root Variables === */
+:root {
+  --teal: #2E8B57;
+  --teal-dark: #1f6a47;
+  --yellow: #FFD700;
+  --dark: #333333;
+  --card-bg: #ffffff;
+  --shadow: rgba(15,15,15,0.12);
+  --radius: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* === Global Reset === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Ensure white base before React mounts === */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffff; /* White base instead of black Vite splash */
+  color: var(--dark);
+}
+
+/* === Wrapper covers full screen === */
+.auth-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+/* === Background covers entire screen === */
+.login-bg,
+.signup-bg,
+.forgot-bg,
+.username-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* === Individual background colors === */
+.login-bg { background-color: var(--teal); }
+.signup-bg { background-color: var(--yellow); }
+.forgot-bg { background-color: var(--teal); }
+.username-bg { background-color: var(--yellow); }
+
+/* === Decorative blobs === */
+.auth-wrapper::before,
+.auth-wrapper::after {
+  content: "";
+  position: absolute;
+  background: var(--dark);
+  border-radius: 50%;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Login & Signup shapes */
+.login-bg::before,
+.signup-bg::before,
+.login-bg::after,
+.signup-bg::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  background: var(--dark);
+  border-radius: 50%;
+}
+
+.login-bg::before {
+  width: 520px;
+  height: 520px;
+  top: -160px;
+  left: -180px;
+}
+.login-bg::after {
+  width: 600px;
+  height: 600px;
+  bottom: -200px;
+  right: -200px;
+}
+
+.signup-bg::before {
+  width: 500px;
+  height: 500px;
+  top: -140px;
+  left: -160px;
+}
+.signup-bg::after {
+  width: 640px;
+  height: 640px;
+  bottom: -220px;
+  right: -220px;
+}
+
+/* Forgot Password background shapes */
+.forgot-bg::before,
+.forgot-bg::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.forgot-bg::before {
+  width: 260px;
+  height: 900px;
+  left: -130px;
+  top: -200px;
+  background: var(--dark);
+  transform: rotate(-12deg);
+  border-radius: 40% 40% 20% 20%;
+  opacity: 0.96;
+}
+
+.forgot-bg::after {
+  width: 380px;
+  height: 380px;
+  right: -120px;
+  bottom: -160px;
+  background: rgba(0,0,0,0.85);
+  border-radius: 50%;
+}
+
+/* Username Reset background shapes */
+.username-bg::before,
+.username-bg::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.username-bg::before {
+  width: 120%;
+  height: 240px;
+  top: -90px;
+  left: -10%;
+  background: var(--dark);
+  transform: rotate(-16deg);
+  border-radius: 16px;
+  opacity: 0.95;
+}
+
+.username-bg::after {
+  width: 420px;
+  height: 420px;
+  right: -180px;
+  bottom: -200px;
+  background: rgba(10,10,10,0.9);
+  border-radius: 48%;
+}
+
+/* === Card container === */
+.auth-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  width: 100%;
+  max-width: 460px;
+}
+
+/* === Auth Card === */
+.auth-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 8px 25px var(--shadow);
+  text-align: center;
+}
+
+/* === Logo === */
+.auth-logo {
+  width: 90px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* === Heading === */
+.auth-heading {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/* === Form Fields === */
+.form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--dark);
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 0.15rem rgba(46,139,87,0.3);
+}
+
+/* === Submit Button === */
+.auth-btn {
+  width: 100%;
+  background-color: var(--teal);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  background-color: var(--teal-dark);
+}
+
+/* === Divider === */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  width: 40%;
+  background: #ccc;
+  position: absolute;
+  top: 50%;
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+/* === Social Buttons === */
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.social-google {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.social-github {
+  background: #111;
+  color: #fff;
+  border: 1px solid #111;
+}
+
+/* === Links === */
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.small {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* === Mobile Adjustments === */
+@media (max-width: 480px) {
+  .auth-card {
+    margin: 0 16px;
+    padding: 1.5rem;
+  }
+  .auth-logo {
+    width: 70px;
+  }
+  .auth-heading {
+    font-size: 1.3rem;
+  }
+  .login-bg::before, .login-bg::after,
+  .signup-bg::before, .signup-bg::after,
+  .forgot-bg::before, .forgot-bg::after,
+  .username-bg::before, .username-bg::after {
+    display: none;
+  }
+}
+/* Replace old centered-card rule */
+.centered-card {
+  max-width: 460px;
+  padding: 40px 45px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Optional tweak so Forgot Password & UsernameReset cards look consistent */
+.auth-card.forgot-card,
+.auth-card.username-card {
+  max-width: 480px;
+  padding: 44px 48px;
+}

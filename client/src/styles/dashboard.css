@@ -1,0 +1,73 @@
+:root{
+  --green: #2E8B57;
+  --teal: #468B8B;
+  --light: #F5F5F5;
+  --char: #333333;
+  --gold: #FFD700;
+  --card-radius: 12px;
+}
+
+/* Layout */
+.app-root { min-height: 100vh; }
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  border-right: 1px solid rgba(0,0,0,0.05);
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar.collapsed { width: 72px; }
+.sidebar .brand-mark {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: linear-gradient(135deg,var(--green),var(--teal));
+}
+.sidebar .brand-text {
+  font-weight: 700; color: var(--char); font-size: 1.05rem;
+}
+.sidebar .nav-link { color: #444; border-radius: 8px; margin: 4px 6px; }
+.sidebar .nav-link:hover { background: rgba(46,139,87,0.06); color: var(--green); }
+.sidebar .nav-link.active { background: rgba(46,139,87,0.12); color: var(--green); box-shadow: inset 3px 0 0 var(--green); }
+.sidebar .link-text { display:inline-block; }
+.sidebar.collapsed .link-text { display:none; }
+.btn-toggle { background: transparent; border: none; color: #666; }
+
+.topbar { background: var(--light); border-bottom: 1px solid rgba(0,0,0,0.04); height: 64px; display:flex; align-items:center; }
+.topbar .page-title { color: var(--char); font-size: 1.1rem; }
+.search-input .search-field { width: 360px; max-width: 45vw; border-radius: 20px; padding-left: 12px; }
+
+/* Main content area */
+.main-content { min-height: 100vh; background: linear-gradient(180deg, #ffffff, #fbfbfb); }
+.page-container { max-width: 1200px; margin: 0 auto; }
+
+/* Stat cards */
+.stat-card { border-radius: var(--card-radius); }
+.stat-card .stat-dot { width: 14px; height: 14px; border-radius: 50%; align-self:flex-start; }
+.stat-dot.green { background: var(--green); }
+.stat-dot.teal { background: var(--teal); }
+.stat-dot.gold { background: var(--gold); }
+
+/* generic card tweaks */
+.card { border-radius: var(--card-radius); box-shadow: 0 6px 18px rgba(10,10,10,0.03); }
+
+/* Buttons and small UI */
+.icon-btn { background: transparent; border: none; font-size: 1.1rem; }
+.profile svg { color: var(--green); }
+
+/* Messages & chat */
+.chat-window { background: #fff; border-radius: 8px; padding: 12px; border: 1px solid rgba(0,0,0,0.04); }
+
+/* Responsive */
+@media (max-width: 991px) {
+  .sidebar { position: fixed; z-index: 1050; transform: translateX(-100%); transition: transform .25s ease; }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar.collapsed { width: 220px; }
+  .topbar .search-input { display:none; }
+  .page-container{ padding: 1rem; }
+}
+
+/* Auth card override if needed */
+.auth-card { max-width: 520px !important; width: 100%; margin: 24px auto; }
+
+/* Small helpers */
+.small-text-muted { color: #666; font-size: .9rem;}
